@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Count vowels</title>
+  </head>
+  <body>
+    <h1>Count Vowels</h1>
+    <label for="id1">Input:</label>
+    <input type="text-input" id="stringInput">
+    <button id="btn-get" onclick="countVowels()">Enter</button>
+    <p id="id2">Number of vowels: </p>
+    <ul>
+      <li id="a">
+        a:
+      </li><br>
+      <li id="e">
+        e:
+      </li><br>
+      <li id="i">
+        i:
+      </li><br>
+      <li id="o">
+        o:
+      </li><br>
+      <li id="u">
+        u:
+      </li><br>
+
+    </ul>
+    <script>
+      function countVowels(){
+        var input_obj = String(document.getElementById("stringInput").value);
+        var output_obj;
+        var vowels = input_obj.match(/[aeiou]/gi);
+
+        if (vowels === null) {
+          document.getElementById("a").innerHTML = "a: 0";
+          document.getElementById("e").innerHTML = "e: 0";
+          document.getElementById("i").innerHTML = "i: 0";
+          document.getElementById("o").innerHTML = "o: 0";
+          document.getElementById("u").innerHTML = "u: 0";
+        } else {
+        var count_a = 0, count_e = 0, count_i = 0, count_o = 0, count_u = 0;
+        for (var i = 0; i < vowels.length; i++){
+          if (vowels[i] == "a"){
+            count_a++;}
+          if (vowels[i] == "e"){
+            count_e++;}
+          if (vowels[i] == "i"){
+            count_i++;}
+          if (vowels[i] == "o"){
+            count_o++;}
+          if (vowels[i] == "u"){
+            count_u++;}
+        }
+      document.getElementById("a").innerHTML = "a: " + count_a;
+      document.getElementById("e").innerHTML = "e: " + count_e;
+      document.getElementById("i").innerHTML = "i: " + count_i;
+      document.getElementById("o").innerHTML = "o: " + count_o;
+      document.getElementById("u").innerHTML = "u: " + count_u;
+  }
+}
+    </script>
+  </body>
+</html>
