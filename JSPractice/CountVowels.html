@@ -1,8 +1,12 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/themes/dark_earth.min.js" type="text/javascript"></script>
     <title>Count vowels</title>
   </head>
   <body>
@@ -28,7 +32,10 @@
         u:
       </li><br>
 
-    </ul>
+    </ul> <br>
+
+    <div id="container" style="width: 100%; height: 100%", "padding: 0", "margin: 0"></div>
+
     <script>
       function countVowels(){
         var input_obj = String(document.getElementById("stringInput").value);
@@ -41,6 +48,11 @@
           document.getElementById("i").innerHTML = "i: 0";
           document.getElementById("o").innerHTML = "o: 0";
           document.getElementById("u").innerHTML = "u: 0";
+          console.log("a: 0");
+          console.log("e: 0");
+          console.log("i: 0");
+          console.log("o: 0");
+          console.log("u: 0");
         } else {
         var count_a = 0, count_e = 0, count_i = 0, count_o = 0, count_u = 0;
         for (var i = 0; i < vowels.length; i++){
@@ -60,8 +72,32 @@
       document.getElementById("i").innerHTML = "i: " + count_i;
       document.getElementById("o").innerHTML = "o: " + count_o;
       document.getElementById("u").innerHTML = "u: " + count_u;
+      console.log("a: " + count_a);
+      console.log("e: " + count_e);
+      console.log("i: " + count_i);
+      console.log("o: " + count_o);
+      console.log("u: " + count_u);
   }
-}
+  
+      anychart.onDocumentReady(function() {
+          var data = anychart.data.set([
+              ["a", count_a],["e", count_e], 
+              ["i", count_i],["o", count_o],
+              ["u", count_u]
+          ]);
+
+          var chart = anychart.bar();
+          var series = chart.data(data);
+          chart.title("Frequency of each vowel");
+          chart.container('container');
+          chart.draw();
+           chart.xAxis().title("Frequency");
+           chart.yAxis().title("Name of Vowels");
+      });
+      anychart.theme(anychart.themes.darkEarth);
+    }
     </script>
+  
+  
   </body>
 </html>
