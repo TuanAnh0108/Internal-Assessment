@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Palindrome</title>
+  </head>
+  <body>
+    <h1>Count Vowels</h1>
+    <label for="id1">Input:</label>
+    <input type="text-input" id="stringInput">
+    <button id="btn-get" onclick="checkPalin()">Check</button>
+    <p id="result"></p>
+
+    <script>
+      function checkPalin(){
+        var input_obj = String(document.getElementById("stringInput").value);
+        var mchar_count;
+        if(input_obj === ""){
+          console.log("Nothing");
+          document.getElementById("result").innerHTML = "Nothing to check"; 
+          return false;   
+        }
+        
+        if (input_obj.length % 2 === 0){
+          mchar_count = input_obj / 2;
+        } else {
+          if (input_obj === 1){
+           document.getElementById("result").innerHTML = "The word is Palindrome";
+           console.log("The world is Palindrome");
+           return True;
+         } else {
+            mchar_count = (input_obj.length - 1) / 2;
+         }
+        }
+
+        for (var x = 0; x < mchar_count; x++) {
+		      if (input_obj[x] != input_obj.slice(-1-x)[0]) {
+            document.getElementById("result").innerHTML = "The word is not Palindrome";
+			      console.log("Entry is not a palindrome.");
+			      return false;
+		}
+	}
+        document.getElementById("result").innerHTML = "The word is Palindrome";
+        console.log("Entry is a Palindrome");
+}
+    </script>
+  </body>
+</html>
