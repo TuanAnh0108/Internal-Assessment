@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style_postit.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Count Vowels</h1>
+    <label for="id1">Input:</label>
+    <input type="text-input" id="stringInput">
+    <button id="btn-get" onclick="PrintW()">Enter</button>
+    <p id="result"></p>
+
+    <div class="text-dec">
+      <p id="text#1"></p>
+    </div>
+
+    <script>
+      function PrintW(){
+        var input_obj = String(document.getElementById("stringInput").value);
+        document.getElementById("text#1").innerHTML = input_obj;
+      }
+    </script>
+  </body>
+</html>
