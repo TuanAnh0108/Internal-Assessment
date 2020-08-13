@@ -8,9 +8,9 @@
  
    ### Success Criteria
   
-  ① There are two versions of the program
+  ① There are two versions of the program: one for teach and one for student
   
-  ② The questions can be added, edited, deleted
+  ② The questions can be added, edited, deleted in the teacher program
   
   ③ The food properties, information such as name, experation date, money spend on that food can be edited
   
