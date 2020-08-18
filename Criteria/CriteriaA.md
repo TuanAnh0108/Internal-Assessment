@@ -8,22 +8,24 @@
  
    ### Success Criteria
   
-  ① There are two versions of the program: one for teach and one for student
+  1. There are two versions of the program: one for teach and one for student
   
-  ② The questions can be added, edited, deleted in the teacher program
+  2. The questions and answers can be added, edited, deleted in the teacher program'
   
-  ③ The food properties, information such as name, experation date, money spend on that food can be edited
+  3. The questions and answers can be stored in the database
   
-  ④ The food information can be stored in the database
+  4. A finding function helping user to easily find the food information in the teacher program
   
-  ⑤ The food can be deleted 
+  5. There is a list that shows all the recent questions
   
-  ⑥ A finding function helping user to easily find the food information
+  6. The app version for students can read the export questions without the answer.
   
-  ⑦ A summary dialog to summerize the quantity, price of the food
+  7. The app version for students can automatically mark the student's work
   
-  ⑧ The information of the food is shown in a table
+  8. The results of the students can be stored in database and exported
   
-  ⑨ There is also log out button to help user close the app
+  9. There is a backup function in both teachers and students app
+  
+  10. Students' marks can be sorted by rank for each test
   
   
