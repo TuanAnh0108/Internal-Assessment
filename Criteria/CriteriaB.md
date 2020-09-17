@@ -12,6 +12,10 @@
 
   **Fig3.** The welcome ui design window containing options for users to select whether they are teachers or students.
   
+  --------------------------------------------------------------------
+  
+  **TEACHER APP**
+  
   ![SystemDiagram](teacher_login.jpg)
 
   **Fig4.**  The login ui design window containing username and password input only due to the teacher can only access it by herself.
@@ -36,17 +40,17 @@
 
   **Fig9.** This is a multipurpose windows as it features both searching and editting the information of the questions created by the users.
   
-  ![SystemDiagram](teacher_edit_search.jpg)
-
-  **Fig10.** This is a multipurpose windows as it features both searching and editting the information of the questions created by the users.
-  
   ![SystemDiagram](teacher_export.jpg)
 
-  **Fig11.** The export function helps teacher to export all the questions that they created. Then they can use this file to send to their students for test purpose.
+  **Fig10.** The export function helps teacher to export all the questions that they created. Then they can use this file to send to their students for test purpose.
+  
+ --------------------------------------------------------------------
+  
+  **STUDENT APP**
   
   ![SystemDiagram](student_login.jpg)
 
-  **Fig12.**  The login ui design window containing username and password input only due to the students can only access it by thenselves.
+  **Fig11.**  The login ui design window containing username and password input only due to the students can only access it by thenselves.
   
   ![SystemDiagram](student_test.jpg)
 
