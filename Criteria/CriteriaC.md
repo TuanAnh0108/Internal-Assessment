@@ -37,8 +37,6 @@ key = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'),salt,1000) #encode 
 
 #### b.Students App
 
-### 6. Sign up Window
-#### a. Teacher App
+### 6. Log In Window (For both Teacher and Students App)
   Due to the user would like to be the exclusive user for this app so that the username and the password do not need to change. Hence, I will just create a username and passwork right inside the Python file instead of storting it in the database file.
-#### b. Students App
-  There are many students and for each of them, there should be an account so that I will get their input and store all their information inside a database file.
+  
