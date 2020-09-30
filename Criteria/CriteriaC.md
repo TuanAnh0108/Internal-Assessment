@@ -35,6 +35,71 @@ key = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'),salt,1000) #encode 
 ### 5. Main Home Window
 #### a.Teacher App
 
+```.py
+from teachers_ListFunct import Ui_MainWindow as mainW
+from teachers_log_in import teacherLogin
+from teachers_edit import teacherEdit
+from teachers_delete import teacherDelete
+from teachers_add import teacherAdd
+from teachers_ListOfQuestions import teacherListOfQ
+from teachers_grade import teacherGrade
+
+
+class Home(QMainWindow, mainW):
+    def __init__(self, parent=None):
+        super(Home, self).__init__(parent)
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.log_out)
+
+        logVar = log_in(self)
+        logVar.show()
+
+    def log_out(self):
+        sys.exit(0)
+
+
+class log_in(teacherLogin):
+    def __init__(self, parent=None):
+        super(log_in, self).__init__(parent)
+        self.setupUi(self)
+
+
+class edit_search(teacherEdit):
+    def __init__(self, parent=None):
+        super(edit_search, self).__init__(parent)
+        self.setupUi(self)
+
+
+class delete(teacherDelete):
+    def __init__(self, parent=None):
+        super(delete, self).__init__(parent)
+        self.setupUi(self)
+
+
+class add(teacherAdd):
+    def __init__(self, parent=None):
+        super(add, self).__init__(parent)
+        self.setupUi(self)
+
+
+class listQ(teacherListOfQ):
+    def __init__(self, parent=None):
+        super(listQ, self).__init__(parent)
+        self.setupUi(self)
+
+
+class grade(teacherGrade):
+    def __init__(self, parent=None):
+        super(grade, self).__init__(parent)
+        self.setupUi(self)
+
+
+app = QApplication(sys.argv)  # creating the application with arguments from user
+mainW = Home()  # setting the main window to the Home UI
+mainW.show()
+app.exec_()
+
+```
 #### b.Students App
 
 ### 6. Log In Window (For both Teacher and Students App)
