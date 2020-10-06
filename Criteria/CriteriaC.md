@@ -45,20 +45,21 @@ class Home(QMainWindow, mainW):
         list_grade.show()
 
     def texport(self):
-        Export = export(self)
-        Export.show()
+        export_t = export(self)
+        export_t.show()
 
     def edit(self):
-        Edit_S = edit_search(self)
-        Edit_S.show()
+        edit_S = edit_search(self)
+        edit_S.show()
 
     def delete(self):
-        Delete = delete(self)
-        Delete.show()
+        delete_t = delete(self)
+        delete_t.show()
 
     def add(self):
-        Add = add(self)
-        Add.show()
+        add_t = add(self)
+        add_t.show()
+
 ```
 
 #### b. Students App
