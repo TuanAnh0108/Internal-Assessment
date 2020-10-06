@@ -148,7 +148,6 @@ app.exec_()
   Due to the user would like to be the exclusive user for this app so that the username and the password do not need to change. Hence, I will just create a username and passwork right inside the Python file instead of storting it in the database file.
  
  ```.py
- class log_in(teacherLogin):
     def __init__(self, parent=None):
         super(log_in, self).__init__(parent)
         self.setupUi(self)
