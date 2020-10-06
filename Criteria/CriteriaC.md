@@ -146,4 +146,24 @@ app.exec_()
 
 ### 6. Log In Window (For both Teacher and Students App)
   Due to the user would like to be the exclusive user for this app so that the username and the password do not need to change. Hence, I will just create a username and passwork right inside the Python file instead of storting it in the database file.
-  
+ 
+ ```.py
+ class log_in(teacherLogin):
+    def __init__(self, parent=None):
+        super(log_in, self).__init__(parent)
+        self.setupUi(self)
+        self.pushButton_2.clicked.connect(self.exit_app)
+        self.pushButton.clicked.connect(self.enterApp)
+
+    def exit_app(self):
+        sys.exit(0)  # 0 mean without errors
+
+    def enterApp(self):
+        if self.lineEdit.text() == username and self.lineEdit_2.text() == password:  # Check if the
+            # username and password
+            # are correct
+            self.close()
+        else:
+            self.lineEdit.setText("")
+            self.lineEdit_2.setText("")
+  ```
