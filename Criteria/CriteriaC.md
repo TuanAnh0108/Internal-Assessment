@@ -17,8 +17,49 @@ python3 pyuic.py name.ui -o name.py
 ```
 ### 3. Add all the Main Windows to the mainApp
 #### a. Teacher App
+```.py
+class Home(QMainWindow, mainW):
+    def __init__(self, parent=None):
+        super(Home, self).__init__(parent)
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.log_out)
+        self.pushButton_3.clicked.connect(self.list_Q)
+        self.pushButton_4.clicked.connect(self.grade)
+        self.pushButton_5.clicked.connect(self.add)
+        self.pushButton_6.clicked.connect(self.delete)
+        self.pushButton_7.clicked.connect(self.edit)
+        self.pushButton_8.clicked.connect(self.texport)
 
+        logVar = log_in(self)
+        logVar.show()
 
+    def log_out(self):
+        sys.exit(0)
+
+    def list_Q(self):
+        listq = listQ(self)
+        listq.show()
+
+    def grade(self):
+        list_grade = grade(self)
+        list_grade.show()
+
+    def texport(self):
+        Export = export(self)
+        Export.show()
+
+    def edit(self):
+        Edit_S = edit_search(self)
+        Edit_S.show()
+
+    def delete(self):
+        Delete = delete(self)
+        Delete.show()
+
+    def add(self):
+        Add = add(self)
+        Add.show()
+```
 
 #### b. Students App
 
