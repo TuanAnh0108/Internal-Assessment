@@ -166,3 +166,69 @@ app.exec_()
             self.lineEdit.setText("")
             self.lineEdit_2.setText("")
   ```
+  ### 7. Teacher App Add New Questions
+   ```.py
+   class add(teacherAdd):
+
+    def __init__(self, parent=None):
+        super(add, self).__init__(parent)
+        self.setupUi(self)
+
+        # Set placeholder text for each input box
+        self.lineEdit.setPlaceholderText("Enter the question")
+        self.lineEdit_2.setPlaceholderText("Enter the answer A")
+        self.lineEdit_3.setPlaceholderText("Enter the answer B")
+        self.lineEdit_4.setPlaceholderText("Enter the answer C")
+        self.lineEdit_5.setPlaceholderText("Enter the answer D")
+
+        # Connect with the function when the button is clicked
+        self.pushButton.clicked.connect(self.moreQ)
+        self.pushButton_2.clicked.connect(self.cancelQ)
+        self.pushButton_3.clicked.connect(self.createdQ)
+
+    def moreQ(self):
+
+        # Open database file with the name that is the date created
+        date_created = datetime.datetime.now().strftime("%x")
+        filename = date_created + ".txt"
+
+        with open(filename, "a") as out_file_add:
+            # Assign input text into variables
+            stringQ = self.lineEdit.text() + " "
+            stringaA = self.lineEdit_2.text() + " "
+            stringaB = self.lineEdit_3.text() + " "
+            stringaC = self.lineEdit_4.text() + " "
+            stringaD = self.lineEdit_5.text() + " "
+            string_correct_A = self.lineEdit_6.text() + "\n"
+
+            # Write the input text into the data base file
+            out_file_add.write(stringQ)
+            out_file_add.write(stringaA)
+            out_file_add.write(stringaB)
+            out_file_add.write(stringaC)
+            out_file_add.write(stringaD)
+            out_file_add.write(string_correct_A)
+
+        # Empty lineEdit so users can add another questions
+        self.lineEdit.setText("")
+        self.lineEdit2.setText("")
+        self.lineEdit3.setText("")
+        self.lineEdit4.setText("")
+        self.lineEdit5.setText("")
+        self.lineEdit6.setText("")
+        self.lineEdit7.setText("")
+
+    def createdQ(self):  # If the users press the create button, simply close the window
+        self.close()
+
+    def cancelQ(self):
+        # If the user click close button => delete the database file.
+        date_created = datetime.datetime.now().strftime("%x")
+        filename = date_created + ".txt"
+
+        if os.path.isfile(filename):
+            os.remove(filename)
+            self.close()
+        else:
+            self.close()
+   ```
