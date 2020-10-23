@@ -232,3 +232,31 @@ app.exec_()
         else:
             self.close()
    ```
+   
+   ### 8. Teachers delete questions
+    ```.py
+    class delete(teacherDelete):
+    def __init__(self, parent=None):
+        super(delete, self).__init__(parent)
+        self.setupUi(self)
+        self.lineEdit.setPlaceholderText("Enter question ID: ")
+        self.lineEdit_2.setPlaceholderText("Enter the file name: ")
+
+        self.buttonBox.clicked.connect(self.deletef)
+
+        def deletef(self):
+            file_name = self.lineEdit_2.text()
+            file_path = "Database/" + file_name + ".txt"
+            output = []
+
+            with open(file_path, "r+") as file:
+                question_ID = self.lineEdit.text()
+                for line in file:
+                    if not line.startswith(question_ID):  # if the line not startwith the String Input, append it to
+                        # the output list => The question deleted will no longer in the list
+                        file.append(line)
+                file.close()
+                file = open(file_path, "w")
+                file.writelines(output)  # Write the output list to the Database file
+                file.close()
+     ```
