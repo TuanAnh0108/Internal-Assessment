@@ -253,7 +253,8 @@ app.exec_()
             with open(file_path, "r+") as file:
                 question_ID = self.lineEdit.text()
                 for line in file:
-                    if not line.startswith(question_ID):  # if the line not startwith the String Input, append it to the output list => The name will be deleted                       file.append(line)
+                    if not line.startswith(question_ID):  # if the line not startwith the String Input, append it to the output list => The name will be deleted                   
+                file.append(line)
                 file.close()
                 file = open(file_path, "w")
                 file.writelines(output)  # Write the output list to the Database file
