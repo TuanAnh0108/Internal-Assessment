@@ -167,7 +167,7 @@ app.exec_()
             self.lineEdit_2.setText("")
   ```
   ### 7. Teacher App Add New Questions
-   ```.py
+  ```.py
    class add(teacherAdd):
 
     def __init__(self, parent=None):
@@ -259,4 +259,5 @@ app.exec_()
                 file = open(file_path, "w")
                 file.writelines(output)  # Write the output list to the Database file
                 file.close()
-   ```
+             ```
+ ### 8. Teachers delete questions
