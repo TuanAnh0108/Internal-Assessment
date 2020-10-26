@@ -260,4 +260,16 @@ app.exec_()
                 file.writelines(output)  # Write the output list to the Database file
                 file.close()
              ```
- ### 8. Teachers delete questions
+ ### 9. Teachers questions list
+  ```.py
+class listQ(teacherListOfQ):
+    def __init__(self, parent=None):
+        super(listQ, self).__init__(parent)
+        self.setupUi(self)
+
+        with open("DataBase/26-10-2020.csv") as mydatabase:  # Open the file
+            file = csv.reader(mydatabase, delimiter=",")  # Split the data by the ","
+            for i, row in enumerate(file):
+                for j, col in enumerate(row):
+                    self.tableWidget.setItem(i, j, QTableWidgetItem(col))  # Set the data to the table
+   ``` 
