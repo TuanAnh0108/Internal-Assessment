@@ -71,23 +71,8 @@
 1| Add Questions | Questions, Answer Choice and Correct Answers|Data in the Databse file and in the questions data table
 2| Edit and Search Questions | Question ID | All the properties of the questions and the new data (if the information is editted) will be saved in the database file and the question list table.
 3| Delete Question | Question ID | All the properties of the questions will be deleted from the database file and also in the questions table.
-4| Export | Directory | The database file will be saved in the inputted directory
-5| DELETE FOOD | The name of the food | All the properties of the food included name of the food will be deleted from the database file and also the food data table
-
-  ### Testing plan
-  
-  Due to the output data can be shown after using the functions right in the app, so that we can use Alpha testing in the progress of building the program and Beta Testing after all the program has been built and in the process that users use the program.
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+4| Export | Directory | The database file will be saved in the github server |
+5| Student Grades |  | Showing the students' name and their score |
+6| Take test | Student Answers | Showing the score and the wrong questions |
+7| History | | Showing the previous score |   
   
