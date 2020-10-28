@@ -8,7 +8,7 @@
 
   **Fig1.** The initial design of the Food Management App. These picutes show the detail of the background of each function. These were made based on the success criteria
   
-![SystemDiagram](System Diagram IA.png)
+![SystemDiagram](SystemDiagram.png)
 
   **Fig3.** This is the system diagram of the Japanese Review System showing the input, software and output.
   
