@@ -28,4 +28,8 @@
   
   10. Students' marks can be sorted by rank for each test
   
+  11. All of the database files will be sent to the github
+  
+  12. Both the apps can push and receive the file from the github
+  
   
