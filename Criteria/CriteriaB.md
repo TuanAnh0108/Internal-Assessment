@@ -10,7 +10,7 @@
   
 ![SystemDiagram](SystemDiagram.png)
 
-  **Fig3.** This is the system diagram of the Japanese Review System showing the input, software and output.
+  **Fig2.** This is the system diagram of the Japanese Review System showing the input, software and output.
   
   --------------------------------------------------------------------
   
@@ -18,31 +18,31 @@
   
   ![SystemDiagram](teacher_login.jpg)
 
-  **Fig4.**  The login ui design window containing username and password input only due to the teacher can only access it by herself.
+  **Fig3.**  The login ui design window containing username and password input only due to the teacher can only access it by herself.
   
    ![SystemDiagram](teacher_listFunct.jpg)
 
-  **Fig5.**  The list of functions window shows all the functions that the user can access through the program. Also, with the log out button, the user can log out and quit the program immediately.
+  **Fig4.**  The list of functions window shows all the functions that the user can access through the program. Also, with the log out button, the user can log out and quit the program immediately.
   
   ![SystemDiagram](teacher_add.jpg)
 
-  **Fig6.**  The add new questions ui window allows user to add a single or multiple questions for the tests. After creating, the questions will be save in the database and shown in the list of questions table.
+  **Fig5.**  The add new questions ui window allows user to add a single or multiple questions for the tests. After creating, the questions will be save in the database and shown in the list of questions table.
   
   ![SystemDiagram](teacher_questionList.jpg)
 
-  **Fig7.**  All the created questions will be shown in the table. Also the anwers and correct answers are listed in this area.
+  **Fig6.**  All the created questions will be shown in the table. Also the anwers and correct answers are listed in this area.
   
   ![SystemDiagram](teacher_delete.jpg)
 
-  **Fig8.**  The delete function will delete the question inputted and all of its answers in the table of questions and datatbase.
+  **Fig7.**  The delete function will delete the question inputted and all of its answers in the table of questions and datatbase.
   
   ![SystemDiagram](teacher_edit_search.jpg)
 
-  **Fig9.** This is a multipurpose windows as it features both searching and editting the information of the questions created by the users.
+  **Fig8.** This is a multipurpose windows as it features both searching and editting the information of the questions created by the users.
   
   ![SystemDiagram](teacher_export.jpg)
 
-  **Fig10.** The export function helps teacher to export all the questions that they created. Then they can use this file to send to their students for test purpose.
+  **Fig9.** The export function helps teacher to export all the questions that they created. Then they can use this file to send to their students for test purpose.
   
  --------------------------------------------------------------------
   
@@ -50,19 +50,25 @@
   
   ![SystemDiagram](student_login.jpg)
 
-  **Fig11.**  The login ui design window containing username and password input only due to the students can only access it by thenselves.
+  **Fig10.**  The login ui design window containing username and password input only due to the students can only access it by thenselves.
   
   ![SystemDiagram](student_test.jpg)
 
-  **Fig13.** The window will show the test for students with questions, answer chose and timer.
+  **Fig11.** The window will show the test for students with questions, answer chose and timer.
   
   ![SystemDiagram](student_finish.jpg)
 
-  **Fig14.**  The finish window notifies the students that they have finished the test and shows the score of the test.
+  **Fig12.**  The finish window notifies the students that they have finished the test and shows the score of the test.
   
   ![SystemDiagram](student_history.jpg)
 
-  **Fig15.**  The history table will show the date and time the tests taken and the grade for each test.
+  **Fig13.**  The history table will show the date and time the tests taken and the grade for each test.
+  
+  ![SystemDiagram](Add_diagram.png)
+  **Fig14.** This is the flowchart showing how the add function works
+  
+  ![SystemDiagram](Delete_diagram.png)
+  **Fig15.** This is the flowchart showing how the delete function works
   
   ### Expected input and output
   
