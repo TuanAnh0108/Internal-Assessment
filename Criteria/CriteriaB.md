@@ -83,4 +83,5 @@
 7| History | | Showing the previous score |   
   
    ### Testing Plan
-
+   
+ Due to the program will show the output data after executing the function, so that after finishing the code, the program can be tested right after that by the developer (alpha testing) and also the the users can check the effectiveness or the test the program in the progress of using the program (beta testing).
