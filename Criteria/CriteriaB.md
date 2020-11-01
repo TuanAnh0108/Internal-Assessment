@@ -65,9 +65,11 @@
   **Fig13.**  The history table will show the date and time the tests taken and the grade for each test.
   
   ![SystemDiagram](Add_diagram.png)
+  
   **Fig14.** This is the flowchart showing how the add function works
   
   ![SystemDiagram](Delete_diagram.png)
+  
   **Fig15.** This is the flowchart showing how the delete function works
   
   ### Expected input and output
