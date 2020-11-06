@@ -1,6 +1,6 @@
-  ### Definition of Problem
+  ### Definition of Problem 
   
-  I am developing a Japanese Review Questions System for my Sensei. She is a client, seeing as she has to spend much paper to print out her students' questions. Also, she can only give the review questions when she meets her students in the class time so that if she forgets to bring the questions, the students cannot practice when they come back home after class. Moreover, she has to spend much time marking the paper for each student, and sometimes she makes some mistakes and gives the wrong grade. Due to the amount of paper, sometimes, the past papers could be lost, or she has to spend much time finding where they are and usually has to empty her storage with unused paper. This inconvenience makes her feel uncomfortable and wasted her time.
+  Client XXX Sensei is a high school teacher at an International School in Japan. Seeing as she has to spend much time to create quizzes and marking for her students. Also, she sometimes makes mistake on marking the students' work leading to give them wrong grade and when it comes to the important test, it might be really a big problem. Moreover, as each students have different level of vocabulary on the class, so it takes her lots of time to create quizzes for individual students. Lastly, for some online classes, she only can give her students homework as online exercises so it is hard for her to see and check students handwriting as the students only type or choose the correct answers for the exercises. Theses convenience makes her feel uncomfortable and wastes her time.
   
   ### Proposed solution
   
