@@ -11,12 +11,9 @@
   ### Proposed solution
     
 I will make separate apps, one for sensei and one for students. Sensei will be able to look at the answers and the record of the performance of the students 
-through the quiz they take and give them comment. For student's app, there will be functions that are taking the quiz, Vocabulary List, Flashcard and Kanji study,
-and History of the previous quizzes. Both two apps will connect to GitHub server so that the files from both two apps can be transferred to each other. I decided 
-to use the Python language and Qtdesigner to develop the system. The Python language is the second-ranking popular and widely-used programming language.  The 
-QtDesigner is a useful tool for creating GUI that can read input and represent the output inside the interface. Also, it can create a button and assign them 
+through the quiz they take and give them comment. For student's app, there will be functions that are taking the quiz, Vocabulary List, Flashcard and Kanji study, and History of the previous quizzes. Both two apps will connect to GitHub server so that the files from both two apps can be transferred to each other. I decided to use the Python language and Qtdesigner to develop the system. The Python language is the second-ranking popular and widely-used programming language.  The QtDesigner is a useful tool for creating GUI that can read input and represent the output inside the interface. Also, it can create a button and assign them 
 with different methods through Python. The Python language can run well on many operating systems such as Windows, MacOS, and Linux. The program can run offline
-and only need the Internet when uploading it the GitHub server.
+and only need the Internet when uploading students' records to the GitHub server.
 
    ### Success Criteria
 
