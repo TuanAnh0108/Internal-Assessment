@@ -33,6 +33,7 @@ and only need the Internet when uploading students' records to the GitHub server
 
 8.	The student’s answers are hand-written and it will convert to the text.  
 
+9.  The programs have the log in system for privacy
 
 
 
