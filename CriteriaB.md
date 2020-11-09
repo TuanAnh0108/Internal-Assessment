@@ -47,7 +47,25 @@
   **Fig8.** The UI Design of the windows showing the records of students
 
 
-
 ### Teachers App
   
+ ![SystemDiagram](LogIn.jpg)
+
+  **Fig9.** The UI Design of the log In Windows
+ 
+ ![SystemDiagram](TMainWins.jpg)
+
+ **Fig10.** The UI Design the Main Windows
+ 
+  ![SystemDiagram](TStudentsList.jpg)
+
+  **Fig11.** The UI Design of the students list
+ 
+   ![SystemDiagram](THistory.jpg)
+
+  **Fig12.** The UI Design of the students' record
+ 
+ 
   
+ 
+ 
