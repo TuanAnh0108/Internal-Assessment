@@ -23,17 +23,21 @@ and only need the Internet when uploading students' records to the GitHub server
 
 3.	The program checks the answers automatically 
 
-4.	The record of students’ answer will be submitted to the teachers’ app
+4.	The record of students’ answer will be submitted to the teachers’ app and displayed into the history windows
 
 5.	The wrong vocabulary answer in the quiz will be added to the vocabulary list and flashcard.
 
 6.	The vocabulary in the quiz is sorted by topic.  
 
-7.	The record for each students’ quiz can be saved into the database and displayed into the history window.
+7.	The vocabulary and its definition can be added by students.
 
 8.	The student’s answers are hand-written and it will convert to the text.  
 
-9.  The programs have the log in system for privacy
+9.  The programs have the log in system
+
+10. The vocabulary in the list will be deleted if the students' answer is correct or the students know the word in the flashcard.
+
+
 
 
 
