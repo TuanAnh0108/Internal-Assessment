@@ -1,12 +1,9 @@
 
 ## GENERAL VIEW:
 
-### Students App
+![SystemDiagram](AppOverview.png)
 
-
-### Teachers App
-
-
+  **Fig1.** The overview diagram of the apps
 
 ## INTERFACE
 
