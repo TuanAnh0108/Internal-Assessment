@@ -61,7 +61,7 @@
    ![SystemDiagram](THistory.jpg)
 
   **Fig12.** The UI Design of the students' record
- 
+  
  
   ## Testing Plan
   
