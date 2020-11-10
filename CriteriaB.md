@@ -78,6 +78,8 @@
 |8|The wrong vocab answer quiz can be added into the flash card|Open the flashcard windows|The users will see the Japanese words during the time of doing the flashcards|
 |9|The vocabulary will be deleted if the students' answer for next time or the students know the word in the flashcard|Doing the quizz one more time, with the same topic. And this time, do all the quizz correct. Or Open the flashcard, check the box "I know this word"|The word will disappear from the table of vocabulary list|
 |10|History Windows|Doing quizz. For example: 5 vocabs, Unit: Greetings|The detail of the quizzes. Eg: "Number of Vocabs": 5, "Date taken: " 20/11/2020, "Unit": Greetings, "Marks": 4/5, and a button besides to show the windows as in the part 4|
+|11|Students' Record on Teacher App|Press on the button with the name of students on it. Eg "Tuan"|There will be a windows look like history windows in the students app, all the records should be the same on the Tuan's students app.|
+
 
 
 
