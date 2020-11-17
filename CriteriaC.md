@@ -76,7 +76,7 @@ For the vocabulary used for quizzes, the data will be added manually. The vocabu
 
 The reason for storing the data like this will be explained later in the part we access the database and seperate data by delimiter for the quizz.
 
-**Writing input data into database**
+**Writing input data into database (Students App Vocabulary Quizz)**
 
 A key component of the vocabulary list is that the users can add new vocabulary manually. This can be done by writing inputted vocabulary and its definiton into 
 a `.csv` file so that the table can load the data from it. Moreover, if the vocabulary already exist in the file so there is no need to add the word into the file. Instead, the program will simply empty the input.
@@ -122,7 +122,7 @@ Then the table also need to represent the data in the .csv file. Below is the sn
 
 The `enumerate(file)` function returns both the iterable, combined with the index of that value. Through this funtion, the data can be written into 2D array table.
 
-**Delete data in database file**
+**Delete data in database file (Students App Vocabulary Quizz)**
 
 While the user can manually add the vocabulary into the table, delete the vocabulary is also a key function for the app. 
 Firstly, it is a must to get the row of selected cell in the table. Below is the snippet of code for getting the row index:
@@ -165,6 +165,27 @@ As after deleting the vocab, it is necessary to update the table with the new da
       self.tableWidget.clear()  # Clear all the content all the table and reload
       self.loadTable()
 ```
+
+
+## Students App Flashcard
+
+An essential part and one of the priority in the success criteria list, is implementing the flash card based on the vocabulary list they make. The database of the vocabulary list is used for the flash card as all of the vocabulary used for this windows are based on the vocabulary list. 
+The process of making flash card follows these steps:
+
+
+   1. Open the database file (vocabulary list)
+    ```.py
+      
+    ```
+    
+    
+    
+    2. Append all the vocabulary and definitions into an array to make it easier for randomly taking vocab in the list
+    3. Generate a random number to take the index of random vocab
+    4. Check if the next vocab is the same as the the current one to avoide duplicating
+    5. If not, set Text of the label to the randomly generated vocabulary and definition.
+    6. 
+
 
 
 
