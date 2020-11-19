@@ -61,7 +61,7 @@ The code is explained below:
 
 In the Japanese Learning system, it will stores the vocabulary, its definition, and quiz. This has to be achieved through a database, such that the information can be kept between user sessions.While database solutions such as SQL and SQLite could be chosen, a more practical and lightweight solution will be suitable for such a small-scale project. Thus, a `.csv` file is used to store the data, which can be accessed through the `csv` library in python (`import csv`).
 
-**Database for quizzes**
+**Database for quizzes and list**
 
 For the vocabulary used for quizzes, the data will be added manually. The vocabulary and its defintion will be seperated by `,` ;
 
@@ -76,7 +76,7 @@ For the vocabulary used for quizzes, the data will be added manually. The vocabu
 
 The reason for storing the data like this will be explained later in the part we access the database and seperate data by delimiter for the quizz.
 
-**Writing input data into database (Students App Vocabulary Quizz)**
+**Writing input data into database (Students App Vocabulary List)**
 
 A key component of the vocabulary list is that the users can add new vocabulary manually. This can be done by writing inputted vocabulary and its definiton into 
 a `.csv` file so that the table can load the data from it. Moreover, if the vocabulary already exist in the file so there is no need to add the word into the file. Instead, the program will simply empty the input.
@@ -122,7 +122,7 @@ Then the table also need to represent the data in the .csv file. Below is the sn
 
 The `enumerate(file)` function returns both the iterable, combined with the index of that value. Through this funtion, the data can be written into 2D array table.
 
-**Delete data in database file (Students App Vocabulary Quizz)**
+**Delete data in database file (Students App Vocabulary List)**
 
 While the user can manually add the vocabulary into the table, delete the vocabulary is also a key function for the app. 
 Firstly, it is a must to get the row of selected cell in the table. Below is the snippet of code for getting the row index:
@@ -248,7 +248,9 @@ f.close()
  
  The program will just continue the process of loading the flash card as in the **part 3**
 
+## Students App Quizz
 
+### 
 
 
 
