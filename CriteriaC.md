@@ -250,7 +250,105 @@ f.close()
 
 ## Students App Quizz
 
-### 
+### Generate Questions
 
+**Get the chosen topic and Number of Vocab**
 
+The number of vocab will determine how many quizzes to generate and the topic chosen will determine which data the program will take.
+
+```.py
+numberOfVocab = int(self.comboBox.currentText())   # The options in the qcombobox are text so that it's necessary to convert it to integer.
+chosenTopic = self.comboBox_2.currentText()
+```
+
+**Write the data into table with the chosen topic and number of vocabs**
+
+a. Disable the Generate button after it is pressed
+
+After pressing generate quizz, the programm will disable the button so that the users cannot generate ans reset the quizz
+
+```.py
+self.pushButton.setEnabled(False)
+```
+
+b. Generate empty table with the number of vocabs rows
+
+The number of rows of the table is the number of vocabs that the users chosen. I will generate the table with that amount of rows. Also the users need to enter their answer so that I also create lineEdit inside each row. Here is the snippet of code for generating the empty table.
+
+```.py
+def generateTable(self):
+    # Take the number of row from the user input
+    numberOfRow = int(self.comboBox.currentText())
+    # Create the table with number of rows above
+    self.tableWidget.setRowCount(numberOfRow)
+
+    # Add QLineEdit inside inside each cell for each row
+    for index in range(self.tableWidget.rowCount()):
+        inputAnswer = QtWidgets.QLineEdit()
+        self.tableWidget.setCellWidget(index, 1, inputAnswer)
+
+    self.tableWidget.repaint()
+```
+c. Set the timer for the quizz
+
+```.py
+def setTheTimer(self):
+
+    # Set the different timer for each selection
+    if self.comboBox.currentText() == "5":
+        self.count = 20 * 10
+    elif self.comboBox.currentText() == "10":
+        self.count = 40 * 10
+    elif self.comboBox.currentText() == "15":
+        self.count = 60 * 10
+    elif self.comboBox.currentText() == "20":
+        self.count = 80 * 10
+    elif self.comboBox.currentText() == "25":
+        self.count = 100 * 10
+    else:
+        self.count = 120 * 10
+
+    # Set text for the timer label
+    self.label_2.setText(str(10))
+    self.label_2.repaint()
+
+    if self.count == 0:
+        self.start = False
+
+    self.start_action()
+
+    timer = QTimer(self)
+    timer.timeout.connect(self.showTime)
+    timer.start(100)
+
+def showTime(self):
+
+    # checking if flag is true
+    if self.start:
+        # incrementing the counter
+        self.count -= 1
+
+        # timer is completed
+        if self.count == 0:
+            # making flag false
+            self.start = False
+
+            # setting text to the label
+            self.submitQ()
+            # self.close()
+
+    if self.start:
+        # getting text from count
+        text = str(self.count / 10) + " s"
+
+        # showing text
+        self.label_2.setText(text)
+
+def start_action(self):
+    # making flag true
+    self.start = True
+    # count = 0
+    if self.count == 0:
+        self.start = False
+```
 
