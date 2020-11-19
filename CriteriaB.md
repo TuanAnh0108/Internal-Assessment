@@ -13,7 +13,7 @@
 
  ![SystemDiagram](StudentsApp.png)
 
-  **Fig9.** The UI Design of the log In Windows
+  **Fig9.** A. Log In Window; B. Students Main Window; C. Vocab Quizz Window; D. Flashcard Window; E. History Window
   
 **Final GUI**
  
@@ -27,7 +27,7 @@
   
  ![SystemDiagram](TeacherApp.png)
 
-  **Fig9.** The UI Design of the log In Windows
+  **Fig9.** A. Log In Window; B. Teacher Main Window; C. Students List; D. Student's History
 
 **Final GUI**
  
