@@ -32,10 +32,6 @@
 **Final GUI**
  
  ![SystemDiagram](TMainWins.jpg)
-
- **Fig10.** The UI Design the Main Windows
- 
-  ![SystemDiagram](TStudentsList.jpg)
   
  
   ## Testing Plan
