@@ -173,18 +173,78 @@ An essential part and one of the priority in the success criteria list, is imple
 The process of making flash card follows these steps:
 
 
-   1. Open the database file (vocabulary list)
+ 1. Check if the vocab list is empty or not and open the vocabulary list file
+   
+  If it is empty,there is no need to load the file and display the vocabulary and its definition there. I will just display a windows to show the finish flash card windows.
+    
     ```.py
-      
+      if (os.path.getsize("VocabList/VocabList.csv")) == 0: # If the file is empty
+            self.close().  # Close the flashcard windows itself
+            self.finish_flash(). # Open the finish flash card windows 
     ```
-    
-    
-    
-    2. Append all the vocabulary and definitions into an array to make it easier for randomly taking vocab in the list
-    3. Generate a random number to take the index of random vocab
-    4. Check if the next vocab is the same as the the current one to avoide duplicating
-    5. If not, set Text of the label to the randomly generated vocabulary and definition.
-    6. 
+  If it is not, open the vocabulary list file to load the data. I will add all the word into an array so I can get a random word inside the array by creating random index.
+  
+     ```.py
+        with open("VocabList/VocabList.csv", "r") as vocab_list_file:  # Open the file
+          file = csv.reader(vocab_list_file, delimiter=",").  # Separate the data in the file by ,
+          vocabArray = []       # Create an array to store all the words and its defintion
+
+          for word in file:       # Loop through all the file and append all the data into the vocab array.
+              vocabArray.append(word)
+     ```
+
+   3. Generate a random number to take the index of random vocabulary inside the array. In this process, by generating list of random number within the range of vocabulary array length, the vocabulary can be taken randomly from the list as their indexes are random. I also make sure that there are no two duplicated random index appear next to each other so that the situtation of displaying the same vocab next to each other will never happen. Lastly, program will set text for the labels to display it inside the GUI windows.
+   
+   ```.py 
+       
+       notTrue = False
+       randomNums = []. # Array stores all the random index numbers
+       
+                # Infinity set random words and definition for the vocab on the flash card
+                while not notTrue:
+                    indexN = random.randint(0, len(vocabArray) - 1)  # Get a random number
+
+                    # Check if the next word is duplicate with the previous word or not
+                    if indexN not in randomNums:
+                        randomNums.append(indexN)  # Add all the random numbers into the array
+                        randomVocab = vocabArray[indexN][0]  # Assign the random vocab through the random index
+                        randomDef = vocabArray[indexN][1]   # Assign the random definition according to the random vocab
+                        notTrue = True
+                        
+                     # Set Text for word and definition
+                     
+                        self.label_2.setText(randomVocab)
+                        self.label_2.repaint()
+                        self.label_3.setText(randomDef)
+                        self.label_3.repaint()
+   ```
+   
+  4. Inside the flashcard window, there are two radio buttons: "I have known this word" and "I have not known this word". 
+  
+  **If the user check on the "I have known this word"**
+  The program will delete the word from the vocab list and it will not display inside the flashcard windows and inside the data file anymore. 
+  
+  a. I will check if the radio button is checked or not. 
+  
+  ```.py 
+      if self.radioButton.isChecked():
+   ```
+  
+  b. I will open the vocab file again and check if any lines inside the file do not start with the deleted vocab. If it does not, I will append to an new array. So through this, the deleted vocab will not be in the array. Lastly, I just need to write the new array into the vocab list file.
+   
+        with open("VocabList/VocabList.csv", "r") as check_file_1:
+            for line in check_file_1:
+                if not line.startswith(vocabArray[indexN][0]):  # if the line not startwith the String Input
+                    # append it to the output list => The name deleted will no longer in the list
+                    output.append(line)
+            check_file_1.close()
+
+        f = open("VocabList/VocabList.csv", "w")
+        f.writelines(output)  # Write the output list to the Database file
+        f.close()
+ **If the user check on the "I have not known this word"**
+ 
+ The program will just continue the process of loading the flash card as in the **part 3**
 
 
 
