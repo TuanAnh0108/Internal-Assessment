@@ -11,7 +11,7 @@
 
 **Sketched Desgin**
 
- ![SystemDiagram](LogIn.jpg)
+ ![SystemDiagram](StudentsApp.png)
 
   **Fig9.** The UI Design of the log In Windows
   
@@ -25,7 +25,7 @@
 
 **Sketched Design**
   
- ![SystemDiagram](LogIn.jpg)
+ ![SystemDiagram](TeacherApp.png)
 
   **Fig9.** The UI Design of the log In Windows
 
