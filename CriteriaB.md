@@ -17,7 +17,7 @@
   
 **Final GUI**
  
-  ![SystemDiagram](LogIn.jpg)
+  ![SystemDiagram](StudentsFGUI.png)
 
   **Fig9.** The UI Design of the log In Windows
 
@@ -31,7 +31,7 @@
 
 **Final GUI**
  
- ![SystemDiagram](TMainWins.jpg)
+ ![SystemDiagram](TeacherFGUI.png)
   
  
   ## Testing Plan
