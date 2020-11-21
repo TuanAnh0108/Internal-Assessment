@@ -261,7 +261,7 @@ numberOfVocab = int(self.comboBox.currentText())   # The options in the qcombobo
 chosenTopic = self.comboBox_2.currentText()
 ```
 
-**Write the data into table with the chosen topic and number of vocabs**
+**Generate the table with the given number of vocabs and and set the timer**
 
 a. Disable the Generate button after it is pressed
 
@@ -273,7 +273,7 @@ self.pushButton.setEnabled(False)
 
 b. Generate empty table with the number of vocabs rows
 
-The number of rows of the table is the number of vocabs that the users chosen. I will generate the table with that amount of rows. Also the users need to enter their answer so that I also create lineEdit inside each row. Here is the snippet of code for generating the empty table.
+The number of rows of the table is the number of vocabs that the users chosen. I will generate the table with that amount of rows. Here is the snippet of code for generating the empty table.
 
 ```.py
 def generateTable(self):
@@ -282,14 +282,10 @@ def generateTable(self):
     # Create the table with number of rows above
     self.tableWidget.setRowCount(numberOfRow)
 
-    # Add QLineEdit inside inside each cell for each row
-    for index in range(self.tableWidget.rowCount()):
-        inputAnswer = QtWidgets.QLineEdit()
-        self.tableWidget.setCellWidget(index, 1, inputAnswer)
-
     self.tableWidget.repaint()
 ```
-c. Set the timer for the quizz
+`.tableWidget.setRowCount(numberOfRow)` is the syntax for creating a table with the given `number of rows`.
+ **Set the timer for the quizz**
 
 ```.py
 def setTheTimer(self):
@@ -351,4 +347,74 @@ def start_action(self):
     if self.count == 0:
         self.start = False
 ```
+**Generate random questions and write them into the table**
 
+a. Declare global variables to make it is available throughout classess
+
+As I will use these variables for the other methods: checkAnswers and show the answers in the history windows. The `global` keyword allows modify variables outside of the current scope which is method in this part.
+
+```.py
+def addingQ(self):
+  global chosenTopic
+  global numberOfVocab
+  global filePath
+  global arrayN, definition, definitionAnswer
+```
+numberOfVocab = int(self.comboBox.currentText())
+
+b. Open data file with given topic chosen 
+
+Firstly, I will assign vocab file path for variable `filePath`. I will get the topic chosen through the user input. Then I will concatenate the string with `.csv` to make the name of the file and assign to variable `fileName`. Finally, all the vocab quizz files are stored in the VocabQuizz folder so that concatenating `VocabQuizz/` with the fileName will make up the Path to the file.
+
+```.py
+# Get the chosen topic from users
+
+chosenTopic = self.comboBox_2.currentText()
+
+# Open the file that have the name of input topic
+fileName = chosenTopic + ".csv"
+filePath = "VocabQuizz/" + fileName
+
+with open(filePath, "r") as quizzFile:
+    file = csv.reader(quizzFile, delimiter=",")
+
+```
+c. Generate random questions
+
+To create randoms questions, I will focus on using array and random function. Firstly, I will append all the English words inside the vocab file into an array. Through this, I can access and get the words from the array by using their indexes. Also, I will append the Japanese words in order to check the answers.
+
+```.py
+arrayN = []
+definition = []
+
+# Append all the English word into array
+for i in file:
+    arrayN.append(i[1])
+    definition.append(i[0])
+```
+
+Now, I create an array that contains random numbers without duplicate. These numbers are the indexes of the words in the English and Japanses array that I created in the previous steps. 
+By using `random.sample(population, k)`, I can generate a list of **unique** elements within the **range of population** and with the length of **k**. `https://docs.python.org/3/library/random.html`. This method is suitable for my program as the users will choose the number of vocabs they want to take in a given array. Also, it will not duplicate so that the English words will not appear twice or more in the quizz.
+
+```.py
+# Create list of random numbers without duplicating
+output = random.sample(range(numberOfVocab), numberOfVocab)
+```
+
+Next I will write to the table with the random english words
+
+```.py
+# Array for storing random english words
+global randomEnglishWords
+
+# Set the text for cell
+for k in range(0, self.tableWidget.rowCount()):
+    # Write the data to the cell at row k and col 0
+    self.tableWidget.setItem(k, 0, QTableWidgetItem(arrayN[output[k]]))
+    
+    # Append the Enlish words and its definiton for the checking answers purpose later.
+    definitionAnswer.append(definition[output[k]])
+    randomEnglishWords.append(arrayN[output[k]])
+
+self.tableWidget.repaint()
+```
