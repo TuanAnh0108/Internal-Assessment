@@ -487,8 +487,7 @@ def storeResult(self):
 
 **Display the result of students quizz**
 
-The result window will display: `The score of the quizz`, `Table of wrong answers`, `Table of correct answers`. The `scoreQ` is the variable showing the result of the quiz that the user just finished. Also, as the user can choose the number of vocab to take so that showing the nuber of vocabs 
-
+The result window will display: `The score of the quizz`, `Table of wrong answers`, `Table of correct answers`. The `scoreQ` is the variable showing the result of the quiz that the user just finished. Also, as the user can choose the number of vocab to take so that showing the nuber of vocabs will help the teachers to keep track of students' performance. Furthermore, in the wrong answers, there will be 3 columns that are English words, inputted answers and the correct answers. From here the users can compare their answers with the correct answers. 
 ```.py
 
 def loadResult(self):
