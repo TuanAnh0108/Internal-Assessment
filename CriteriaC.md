@@ -401,7 +401,7 @@ By using `random.sample(population, k)`, I can generate a list of **unique** ele
 output = random.sample(range(numberOfVocab), numberOfVocab)
 ```
 
-Next I will write to the table with the random english words
+Next I will write data to the table with the random english words by using `tableWidget.setItem(row,0,item)` to write the `item` to the cell at `row = row, col = 0`. The reason for the column = 0 is that because the quiz will only display the Enlgish word for the students in the first column and the cells in the second column will be empty so that the users can input new words when taking the quiz. Also I will append the English words and their Japanese words into two arrays so that I can use these two arrays to check the answers after they submit their quizzes.
 
 ```.py
 # Array for storing random english words
@@ -416,5 +416,39 @@ for k in range(0, self.tableWidget.rowCount()):
     definitionAnswer.append(definition[output[k]])
     randomEnglishWords.append(arrayN[output[k]])
 
+# Reload the data in the table again
 self.tableWidget.repaint()
 ```
+### Check answers and display results
+
+**Check Answers**
+
+One success criteria of the program is that it will automatically check the answers and calculate the results for the students. Firstly, I will loop through all the rows in the table, then assign the inputted answers to the `inputAnswer` variable by using `QTableWidgetItem(self.tableWidget.item(row, col).text)`. This function will take out the content of the element inside the cell at the coordinate (row,col). A further explantion for the function is in this website: `https://doc.qt.io/qt-5/qtablewidgetitem.html`. As the inputted answers are all in the second column so that in this case `col = 1`. 
+
+```.py
+# Loop through all the row in the table to check the inputted answers
+for indexRow in range(self.tableWidget.rowCount()):
+    inputAnswer = QTableWidgetItem(self.tableWidget.item(indexRow, 1)).text()
+```
+
+Then inside the loop, I will also check if the inputted answers are the same as the answers. As the inputted data is Japanese words that is non-ASCII text, so that Python cannot compare them. In order to do that, I use `unicodedata.normalize(form, unistr)` to return the normal form for the Unicode string unistr `https://docs.python.org/3/library/unicodedata.html`. If the answer is correct, increase the `scoreQ` by 1, then append the correct Answers into `correctAnswers` array, else append all the wrong answer into the `wrongAnswers` list. The reason for appending into two arrays is that the finish quizz windows will display both the correct and wrong answers so that the tables will take the data from these two lists.
+
+```.py
+# Check if the answers are correct
+correctAnswersIndex = []
+correctAnswers = []
+wrongAnswers = []
+wrongAnswersIndex = []
+scoreQ = 0 # Variable to take the score of the quiz
+
+if unicodedata.normalize('NFC', inputAnswer) == unicodedata.normalize('NFC', definitionAnswer[indexRow]):
+    scoreQ += 1  # Increase the score by 1
+    correctAnswers.append(inputAnswer)
+    correctAnswersIndex.append(indexRow)
+else:
+    wrongAnswers.append(inputAnswer)
+    wrongAnswersIndex.append(indexRow)
+```
+
+
+
