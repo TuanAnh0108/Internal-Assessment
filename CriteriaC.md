@@ -485,3 +485,45 @@ def storeResult(self):
             historyFile_1.write(definitionAnswer[m + 1] + "\n")
 ```
 
+**Display the result of students quizz**
+
+The result window will display: `The score of the quizz`, `Table of wrong answers`, `Table of correct answers`. The `scoreQ` is the variable showing the result of the quiz that the user just finished. Also, as the user can choose the number of vocab to take so that showing the nuber of vocabs 
+
+```.py
+
+def loadResult(self):
+  
+  # Set the label for the result
+  self.label_2.setText("Your Score is: " + str(scoreQ) + "/" + str(numberOfVocab))
+  self.label_2.repaint()
+  with open(fileHistoryPathWrong, "r+") as resultWrong:  # Open the file
+      file = csv.reader(resultWrong, delimiter=",")  # Split the data by the ","
+
+      numberOfRowWrong = len(wrongAnswers)
+      # Create the table with number of rows above
+      self.tableWidget.setRowCount(numberOfRowWrong)
+
+      for i, row in enumerate(file):
+          for j, col in enumerate(row):
+              self.tableWidget.setItem(i, j, QTableWidgetItem(col))  # Set the data to the table
+
+      # Reload the content of the table again
+      self.tableWidget.repaint()
+      # Erase the data inside the file
+
+  with open(fileHistoryPathCorrect, "r+") as resultCorrect:  # Open the file
+      file_1 = csv.reader(resultCorrect, delimiter=",")  # Split the data by the ","
+
+      numberOfRowCorrect = len(correctAnswers)
+      # Create the table with number of rows above
+      self.tableWidget_2.setRowCount(numberOfRowCorrect)
+
+      for i, row in enumerate(file_1):
+          for j, col in enumerate(row):
+              self.tableWidget_2.setItem(i, j, QTableWidgetItem(col))  # Set the data to the table
+
+      # Erase the data inside the file
+      # Reload the table
+      self.tableWidget_2.repaint()
+```
+
