@@ -166,7 +166,6 @@ self.tableWidget.clear()  # Clear all the content all the table and reload
 self.loadTable()
 ```
 
-
 ## Students App Flashcard
 
 An essential part and one of the priority in the success criteria list, is implementing the flash card based on the vocabulary list they make. The database of the vocabulary list is used for the flash card as all of the vocabulary used for this windows are based on the vocabulary list. 
@@ -285,6 +284,7 @@ def generateTable(self):
     self.tableWidget.repaint()
 ```
 `.tableWidget.setRowCount(numberOfRow)` is the syntax for creating a table with the given `number of rows`.
+
  **Set the timer for the quizz**
 
 ```.py
@@ -431,7 +431,7 @@ for indexRow in range(self.tableWidget.rowCount()):
     inputAnswer = QTableWidgetItem(self.tableWidget.item(indexRow, 1)).text()
 ```
 
-Then inside the loop, I will also check if the inputted answers are the same as the answers. As the inputted data is Japanese words that is non-ASCII text, so that Python cannot compare them. In order to do that, I use `unicodedata.normalize(form, unistr)` to return the normal form for the Unicode string unistr `https://docs.python.org/3/library/unicodedata.html`. If the answer is correct, increase the `scoreQ` by 1, then append the correct Answers into `correctAnswers` array, else append all the wrong answer into the `wrongAnswers` list. The reason for appending into two arrays is that the finish quizz windows will display both the correct and wrong answers so that the tables will take the data from these two lists.
+Then inside the loop, I will also check if the inputted answers are the same as the answers. As the inputted data is Japanese words that is non-ASCII text, so that Python cannot compare them. In order to do that, I use `unicodedata.normalize(form, unistr)` to return the normal form for the Unicode string unistr `https://docs.python.org/3/library/unicodedata.html`. If the answer is correct, increase the `scoreQ` by 1, then append the correct Answers into `correctAnswers` array, else append all the wrong answer into the `wrongAnswers` list. The reason for appending into two arrays is that the finish quizz windows will display both the correct and wrong answers so that the tables will take the data from 2 files that contain these two arrays.
 
 ```.py
 # Check if the answers are correct
@@ -450,5 +450,38 @@ else:
     wrongAnswersIndex.append(indexRow)
 ```
 
+**Store the results**
 
+Through storing the students records into two files `fileHistoryNameCorrect`, which for correct answers and `fileHistoryNameWrong`, which for wrong answers for quizz, the finish quizz tables can take the data from these two files to display data into 2 tables inside the windows. Also, by adding date taken the quiz will help teacher to keep track of it. Here is the snippet of code with comment.
+
+```.py
+def storeResult(self):
+
+    # Take the date that the quiz is taken
+    global today, d, fileHistoryNameWrong, fileHistoryPathWrong, fileHistoryNameCorrect, fileHistoryPathCorrect
+
+    today = date.today()
+    d = today.strftime("%d-%m-%Y")
+
+    # Create the correct answers file with the name of current date
+    fileHistoryNameCorrect = d + "-correctAns.csv"
+    fileHistoryPathCorrect = "History File/" + fileHistoryNameCorrect
+
+    # Create the wrong answers file with the name of current date
+    fileHistoryNameWrong = d + "-wrongAns.csv"
+    fileHistoryPathWrong = "History File/" + fileHistoryNameWrong
+
+    # Write the correct answers to the file
+    with open(fileHistoryPathCorrect, "w+") as historyFile:
+        for i in range(len(correctAnswers)):
+            historyFile.write(randomEnglishWords[correctAnswersIndex[i]] + ",")
+            historyFile.write(correctAnswers[i] + "\n")
+
+    # Write the wrong answers to the file
+    with open(fileHistoryPathWrong, "w+") as historyFile_1:
+        for m in range(0, len(wrongAnswers)):
+            historyFile_1.write(randomEnglishWords[wrongAnswersIndex[m]] + ",")
+            historyFile_1.write(wrongAnswers[m] + ",")
+            historyFile_1.write(definitionAnswer[m + 1] + "\n")
+```
 
