@@ -571,4 +571,62 @@ This windows will show the record of all the quiz that students take. The method
 
 ```
 
+## Kanji Learning Windows
+As a part of success criteria, the kanji learning windows will randomly generate kanji words from the database. In this part, in order to help students learn kanji more effective, I make it as the multiple choice test without calculating the score or record the results. So that, instead of just showing the words and its defintion, the program can help the students remember longer and more active the kanji words.
+1. openning the csv file and append all the of data inside into an array
 
+```.py
+with open("VocabList/Kanji.csv") as kanji_file:
+    file = csv.reader(kanji_file, delimiter=",")
+    kanjiArray = []
+
+    for word in file:
+        kanjiArray.append(word)
+```
+2. Generate 4 random kanji words from the kanji Array. The reason for 4 is that this is the multiple choices with 4 options. Through taking out 4 kanjis, 4 definitions are also generated to be displayed as the choices for the kanji word. In here, I use `random.sample()` to generate elements without duplicating. 
+
+```.py
+randomKanji = random.sample(kanjiArray, 4)
+```
+3. Set text from random words to the radio buttons from the randomKanji arrays
+
+```.py
+
+            flag = True
+            while flag:  # The program will run until the user exit.
+                l = 0
+                # Array with random indexes
+                randomIndexList = []
+
+                while len(randomIndexList) < 4:
+                    index = random.randint(0, 3)
+
+                    if index not in randomIndexList:
+                        randomIndexList.append(index)
+
+                # Set the text for the label t
+                self.label_2.setText(randomKanji[randomIndexList[index]][0])
+
+                # Assign the correct answers for the variable to check it later
+                # using global for the purpose of using it in another function
+                global correctAns
+                correctAns = randomKanji[randomIndexList[index]][1]
+                self.label_2.repaint()
+
+                # Assign random text for each button
+                self.radioButton.setText(randomKanji[randomIndexList[l]][1])
+                self.radioButton.repaint()
+                l += 1
+                self.radioButton_2.setText(randomKanji[randomIndexList[l]][1])
+                self.radioButton_2.repaint()
+                l += 1
+                self.radioButton_3.setText(randomKanji[randomIndexList[l]][1])
+                self.radioButton_3.repaint()
+                l += 1
+                self.radioButton_4.setText(randomKanji[randomIndexList[l]][1])
+                self.radioButton_4.repaint()
+
+                self.checkAnswer()
+
+                flag = False
+```
