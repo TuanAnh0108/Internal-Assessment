@@ -4,6 +4,11 @@
 ![SystemDiagram](AppOverview.png)
 
   **Fig1.** The overview diagram of the apps
+ 
+ ![SystemDiagram](SystemDiagram.png)
+
+  **Fig1.** The overview diagram of the apps
+ 
 
 ## INTERFACE
 
