@@ -18,7 +18,7 @@
 
  ![SystemDiagram](StudentsApp.png)
 
-  **Fig9.** A. Log In Window; B. Students Main Window; C. Vocab Quizz Window; D. Flashcard Window; E. History Window
+  **Fig9.** A. Log In Window; B. Students Main Window; C. Vocab Quizz Window; D. Flashcard Window; E. History Window; F.Vocab List Window; G.Kanji Learning Window
   
 **Final GUI**
  
