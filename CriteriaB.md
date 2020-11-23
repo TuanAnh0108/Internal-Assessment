@@ -5,9 +5,9 @@
 
   **Fig1.** The overview diagram of the apps
  
- ![SystemDiagram](SystemDiagram.png)
+ ![SystemDiagram](systemDiagram.png)
 
-  **Fig1.** The overview diagram of the apps
+  **Fig2.** The overview diagram of the apps
  
 
 ## INTERFACE
