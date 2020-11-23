@@ -524,4 +524,51 @@ def loadResult(self):
       # Reload the table
       self.tableWidget_2.repaint()
 ```
+**Save the detail of the quizz**
+
+After finishing the quiz, the program will save the details of the quizz: `Date taken`, `Chosen Topic`, `Number of vocabs`, `Score that the students got`. Simply, the program will use all of the variables `d`, which is today date; `chosenTopic`, `numberOfVocab`, `scoreQ` from the previous part of the program. All of these variables will be written into `historyFile.csv`. The History Windows in the next part will use the data from this file to display all the information related to the quizz.
+
+```.py
+
+filePath = "Students Record Quiz/historyFile.csv"
+today = date.today()
+d = today.strftime("%d-%m-%Y")
+
+with open(filePath, "a+") as historyFile:
+    historyFile.write(d + ",")
+    historyFile.write(chosenTopic + ",")
+    historyFile.write(str(numberOfVocab) + ",")
+    historyFile.write(str(scoreQ) + ",")
+```
+
+## History Windows
+This windows will show the record of all the quiz that students take. The method used for this part is the same as writing the data into table in the previous parts. Here is the snippet of code with comment.
+
+```.py
+    def loadTable(self):
+
+        historyFile = open("Students Record Quiz/historyFile.csv", "r")
+        # Set the number of rows for the table based on the number of lines on the files
+        self.tableWidget.setRowCount(len(list(historyFile)))
+        # Reload the table
+        self.tableWidget.repaint()
+        
+        
+        fileH = csv.reader(historyFile, delimiter=",")  # Split the data by the ","
+        arrayN = [] # array to store all the data into
+        
+        # Load through all the fileH and append data into the array.
+        for i in fileH: 
+            arrayN.append(i)
+        
+        # Load the data into the table
+        for i in range(self.tableWidget.rowCount()):
+            for j in range(self.tableWidget.columnCount()):
+                self.tableWidget.setItem(i, j, QTableWidgetItem(arrayN[i][j]))
+        
+        # Reload the table.
+        self.tableWidget.repaint()
+
+```
+
 
