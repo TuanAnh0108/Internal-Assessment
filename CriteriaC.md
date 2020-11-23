@@ -590,6 +590,8 @@ randomKanji = random.sample(kanjiArray, 4)
 ```
 3. Set text from random words to the radio buttons from the randomKanji arrays
 
+The program will run every time the user press the next button and after generating the kanji, it will stop. In this part I use `while` loop to implement the function as the number of times that the user presses the `next` button is unknown so using `for loop` in this case is not appropriate. By assign `True` or `False` to the variable `flag`, the program can continue or stop through `while flag`. 
+At the previous part, the program has already created 4 random words and store them to the `kanjiArray`. Thus, in this part, the program just need to set text, which is elements from the array to the radio buttons. Because the radio buttons cannot change their orders or randomly taken, taking random text from the list and assign to the radio buttons is a solution for this. The method is: generate 4 non-duplicated random numbers in range(0,3) as the length of the `kanjiArray` is 4 then append them all into `randomIndexList` array. Now the last step is setting text from the random kanji array. Below is the snippet of code with comment.  
 ```.py
   flag = True
   while flag:  # The program will run until the user exit.
@@ -624,6 +626,8 @@ randomKanji = random.sample(kanjiArray, 4)
       l += 1
       self.radioButton_4.setText(randomKanji[randomIndexList[l]][1])
       self.radioButton_4.repaint()
+      
+      # Stop generating random words
       flag = False
 ```
 
