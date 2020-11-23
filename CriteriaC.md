@@ -591,42 +591,40 @@ randomKanji = random.sample(kanjiArray, 4)
 3. Set text from random words to the radio buttons from the randomKanji arrays
 
 ```.py
+  flag = True
+  while flag:  # The program will run until the user exit.
+      l = 0
+      # Array with random indexes
+      randomIndexList = []
 
-            flag = True
-            while flag:  # The program will run until the user exit.
-                l = 0
-                # Array with random indexes
-                randomIndexList = []
+      while len(randomIndexList) < 4:
+          index = random.randint(0, 3)
 
-                while len(randomIndexList) < 4:
-                    index = random.randint(0, 3)
+          if index not in randomIndexList:
+              randomIndexList.append(index)
 
-                    if index not in randomIndexList:
-                        randomIndexList.append(index)
+      # Set the text for the label t
+      self.label_2.setText(randomKanji[randomIndexList[index]][0])
 
-                # Set the text for the label t
-                self.label_2.setText(randomKanji[randomIndexList[index]][0])
+      # Assign the correct answers for the variable to check it later
+      # using global for the purpose of using it in another function
+      global correctAns
+      correctAns = randomKanji[randomIndexList[index]][1]
+      self.label_2.repaint()
 
-                # Assign the correct answers for the variable to check it later
-                # using global for the purpose of using it in another function
-                global correctAns
-                correctAns = randomKanji[randomIndexList[index]][1]
-                self.label_2.repaint()
-
-                # Assign random text for each button
-                self.radioButton.setText(randomKanji[randomIndexList[l]][1])
-                self.radioButton.repaint()
-                l += 1
-                self.radioButton_2.setText(randomKanji[randomIndexList[l]][1])
-                self.radioButton_2.repaint()
-                l += 1
-                self.radioButton_3.setText(randomKanji[randomIndexList[l]][1])
-                self.radioButton_3.repaint()
-                l += 1
-                self.radioButton_4.setText(randomKanji[randomIndexList[l]][1])
-                self.radioButton_4.repaint()
-
-                self.checkAnswer()
-
-                flag = False
+      # Assign random text for each button
+      self.radioButton.setText(randomKanji[randomIndexList[l]][1])
+      self.radioButton.repaint()
+      l += 1
+      self.radioButton_2.setText(randomKanji[randomIndexList[l]][1])
+      self.radioButton_2.repaint()
+      l += 1
+      self.radioButton_3.setText(randomKanji[randomIndexList[l]][1])
+      self.radioButton_3.repaint()
+      l += 1
+      self.radioButton_4.setText(randomKanji[randomIndexList[l]][1])
+      self.radioButton_4.repaint()
+      flag = False
 ```
+
+               
