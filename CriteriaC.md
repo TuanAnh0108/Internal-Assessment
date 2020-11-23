@@ -171,7 +171,6 @@ self.loadTable()
 An essential part and one of the priority in the success criteria list, is implementing the flash card based on the vocabulary list they make. The database of the vocabulary list is used for the flash card as all of the vocabulary used for this windows are based on the vocabulary list. 
 The process of making flash card follows these steps:
 
-
  1. Check if the vocab list is empty or not and open the vocabulary list file
    
   If it is empty,there is no need to load the file and display the vocabulary and its definition there. I will just display a windows to show the finish flash card windows.
@@ -264,7 +263,7 @@ chosenTopic = self.comboBox_2.currentText()
 
 a. Disable the Generate button after it is pressed
 
-After pressing generate quizz, the programm will disable the button so that the users cannot generate ans reset the quizz
+After pressing **generate button**, the programm will disable the button so that the users cannot generate or reset the quizz. 
 
 ```.py
 self.pushButton.setEnabled(False)
