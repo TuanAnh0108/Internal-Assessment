@@ -47,10 +47,12 @@
 
   **Fig7.** Here is the flowchart of the flashcard window. In the success criteria, all the vocabualary in the vocabulary list will be shown in the flashcard window. The flash card window will read the file line by line and randomly take the data from the file and then display it inside the window. In the flowchart, rhombus represents the conditions; hexagon used for loop; rectangle is for process or actions;
   
-  ### Generating Question
+  ### Generating random quizz
+   ![SystemDiagram](GenerateQFC.png)
+
+  **Fig7.** Here is the flowchart of generating random quizzes function, which is inside the Vocab Quizz windows. It will generate random with the chosen number of quiz and topic. It is one of the key success criteria for the program: `generating random quizzes`. 
+  .In the flowchart, rhombus represents the conditions; hexagon used for loop; rectangle is for process or actions;
   
-  
- 
   ## Testing Plan
   
   
