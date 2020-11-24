@@ -50,7 +50,15 @@
   ### Generating random quizz
    ![SystemDiagram](GenerateQFC.png)
 
-  **Fig7.** Here is the flowchart of generating random quizzes function, which is inside the Vocab Quizz windows. This solves the client's requirement as it will generate quiz with random English words that are sorted by topic and the number of vocabs can be chosen by users.In the flowchart, rhombus represents the conditions; hexagon used for loop; rectangle is for process or actions;
+  **Fig8.** Here is the flowchart of generating random quizzes function, which is inside the Vocab Quizz windows. This solves the client's requirement as it will generate quiz with random English words that are sorted by topic and the number of vocabs can be chosen by users.In the flowchart, rhombus represents the conditions; hexagon used for loop; rectangle is for process or actions;
+  
+  ## Database
+  ![SystemDiagram](Database.png)
+
+  **Fig9.** This shows the database the folders that they are in. In the Japanese Learning system, it will stores the vocabulary, its definition, and quiz. This has to be achieved through a database. While database solutions such as SQL and SQLite could be chosen, a more practical and lightweight solution will be suitable for such a small-scale project. Except for the history and record files database ,most of the database files will contain Enlgish words and Japanese words that are separated by `,`. While for the history file, there will be information about date, marks related to the quizz.
+  
+  ## UML Diagram
+  
   
   ## Testing Plan
   
