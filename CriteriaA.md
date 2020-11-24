@@ -14,9 +14,9 @@ and only need the Internet when uploading students' records to the GitHub server
 
    ### Success Criteria
 
-1. The vocab quiz and kanji vocabulary can be generated automatically
+1. The vocab quiz can be randomly generated and checked automatically
 
-2. The program checks the answers automatically 
+2. The kanji vocabulary for learning can be generated randomly
 
 3. The wrong vocabulary answer in the quiz will be added to the vocabulary list and flashcard
 
