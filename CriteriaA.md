@@ -2,11 +2,8 @@
   
  Client XXX Sensei is a high school teacher at an International School in Japan. Seeing as she has to spend much time to create quizzes and marking for her 
  students. Also, she sometimes makes mistakes in marking the students' work, leading to the wrong grade, and when it comes to the important test, it might be a 
- big problem. Moreover, as each student has different vocabulary levels in the class, it takes her lots of time to create quizzes for individual students. Lastly, 
- for some online classes it is hard for her to see and check students' handwriting as the students only type or choose the correct answers for the online exercises.
- These conveniences make her feel uncomfortable and wastes her time. During the Japanese class time, she had talked to me about her problems with Japanese 
- quizzes. She described what she wanted: to have a program that can automatically generate a Japanese vocabulary quiz by topic. It can also create a vocab list and 
- flashcard based on the student's answers on the quizzes and automatically marks the students' answers. 
+ big problem. Moreover, as each student has different vocabulary levels in the class, it takes her lots of time to create quizzes for individual students.Lastly, 
+ for some online classes it is hard for her to see and check students' handwriting as the students only type or choose the correct answers for the online exercises. These conveniences make her feel uncomfortable and wastes her time. During the Japanese class time, she had talked to me about her problems with Japanese quizzes. She described what she wanted: to have a program that can automatically generate a Japanese vocabulary quiz by topic. It can also create a vocab list and flashcard based on the student's answers on the quizzes and automatically marks the students' answers. 
   
   ### Proposed solution
     
@@ -17,25 +14,25 @@ and only need the Internet when uploading students' records to the GitHub server
 
    ### Success Criteria
 
-1.	There are two versions of the program: one for teach and one for students.
+1. The vocab quiz and kanji vocabulary can be generated automatically
 
-2.	The vocab quiz and kanji vocabulary can be generated automatically
+2. The program checks the answers automatically 
 
-3.	The program checks the answers automatically 
+3. The wrong vocabulary answer in the quiz will be added to the vocabulary list and flashcard
 
-4.	The record of students’ answer will be submitted to the teachers’ app and displayed into the history windows
+4. The record of students’ answer will be submitted to the teachers’ app and displayed into the history windows
 
-5.	The wrong vocabulary answer in the quiz will be added to the vocabulary list and flashcard
+5. The vocabulary in the quiz is sorted by topic
 
-6.	The vocabulary in the quiz is sorted by topic
+6. The vocabulary and its definition can be added by students
 
-7.	The vocabulary and its definition can be added by students
+7. The student’s answers are hand-written and it can be displayed as image
 
-8.	The student’s answers are hand-written and it can be displayed as image
+8.  The vocabulary in the list will be deleted if the students' answer is correct or the students know the word in the flashcard
 
-9.  The programs have the log in system
+9. There are two versions of the program: one for teach and one for students.
 
-10. The vocabulary in the list will be deleted if the students' answer is correct or the students know the word in the flashcard
+10. The programs have the log in system
 
 
 
