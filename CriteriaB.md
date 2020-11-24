@@ -58,7 +58,9 @@
   **Fig9.** This shows the database the folders that they are in. In the Japanese Learning system, it will stores the vocabulary, its definition, and quiz. This has to be achieved through a database. While database solutions such as SQL and SQLite could be chosen, a more practical and lightweight solution will be suitable for such a small-scale project. Except for the history and record files database ,most of the database files will contain Enlgish words and Japanese words that are separated by `,`. While for the history file, there will be information about date, marks related to the quizz.
   
   ## UML Diagram
+  ![SystemDiagram](UML.png)
   
+   **Fig10.** Here is the OOP UML Diagram showing the classes inside the program. Also, classeses' functions, variables and how they are related to each other are shown in this diagram.
   
   ## Testing Plan
   
