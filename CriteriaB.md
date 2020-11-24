@@ -7,7 +7,7 @@
  
  ![SystemDiagram](systemDiagram.png)
 
-  **Fig2.** The overview diagram of the apps
+  **Fig2.** The system diagram shows the input and output of the program. The place where database stored and the programming used for the program. Also, the actions that the users can do with the program.
  
 
 ## INTERFACE
@@ -50,8 +50,7 @@
   ### Generating random quizz
    ![SystemDiagram](GenerateQFC.png)
 
-  **Fig7.** Here is the flowchart of generating random quizzes function, which is inside the Vocab Quizz windows. It will generate random with the chosen number of quiz and topic. It is one of the key success criteria for the program: `generating random quizzes`. 
-  .In the flowchart, rhombus represents the conditions; hexagon used for loop; rectangle is for process or actions;
+  **Fig7.** Here is the flowchart of generating random quizzes function, which is inside the Vocab Quizz windows. This solves the client's requirement as it will generate quiz with random English words that are sorted by topic and the number of vocabs can be chosen by users.In the flowchart, rhombus represents the conditions; hexagon used for loop; rectangle is for process or actions;
   
   ## Testing Plan
   
