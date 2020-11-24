@@ -45,7 +45,11 @@
   ### Flash Card window
    ![SystemDiagram](FlashCardFC.png)
 
-  **Fig7.** Flash Card Window flow chart
+  **Fig7.** Here is the flowchart of the flashcard window. In the success criteria, all the vocabualary in the vocabulary list will be shown in the flashcard window. The flash card window will read the file line by line and randomly take the data from the file and then display it inside the window. In the flowchart, rhombus represents the conditions; hexagon used for loop; rectangle is for process or actions;
+  
+  ### Generating Question
+  
+  
  
   ## Testing Plan
   
