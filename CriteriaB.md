@@ -18,13 +18,13 @@
 
  ![SystemDiagram](StudentsApp.png)
 
-  **Fig9.** A. Log In Window; B. Students Main Window; C. Vocab Quizz Window; D. Flashcard Window; E. History Window; F.Vocab List Window; G.Kanji Learning Window
+  **Fig3.** A. Log In Window; B. Students Main Window; C. Vocab Quizz Window; D. Flashcard Window; E. History Window; F.Vocab List Window; G.Kanji Learning Window
   
 **Final GUI**
  
   ![SystemDiagram](StudentsFGUI.png)
 
-  **Fig9.** A. Log In Window; B. Students Main Window; C. Vocab Quizz Window; D. Flashcard Window; E. Kanji Window; F. History Window; G. Vocabulary List
+  **Fig4.** A. Log In Window; B. Students Main Window; C. Vocab Quizz Window; D. Flashcard Window; E. Kanji Window; F. History Window; G. Vocabulary List
 
 ### Teachers App
 
@@ -32,14 +32,20 @@
   
  ![SystemDiagram](TeacherApp.png)
 
-  **Fig9.** A. Log In Window; B. Teacher Main Window; C. Students List; D. Student's History
+  **Fig5.** A. Log In Window; B. Teacher Main Window; C. Students List; D. Student's History
 
 **Final GUI**
  
  ![SystemDiagram](TeacherFGUI.png)
  
- **Fig9.** A. Log In Window; B. Teacher Main Window; C. Students List; D. Student's History
+ **Fig6.** A. Log In Window; B. Teacher Main Window; C. Students List; D. Student's History
   
+  ## Flow Chart
+  
+  ### Flash Card window
+   ![SystemDiagram](FlashCardFC.png)
+
+  **Fig7.** Flash Card Window flow chart
  
   ## Testing Plan
   
