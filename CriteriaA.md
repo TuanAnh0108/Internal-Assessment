@@ -16,7 +16,7 @@ and only need the Internet when uploading students' records to the GitHub server
 
 1. The vocab quiz can be randomly generated and checked automatically
 
-2. The kanji vocabulary for learning can be generated randomly
+2. The kanji vocabulary for learning can be  generated randomly
 
 3. The wrong vocabulary answer in the quiz will be added to the vocabulary list and flashcard
 
