@@ -2,6 +2,59 @@
 
 ### All the code can be found in the code folder 
 
+## Sign Up for students
+
+To log a user in, the user must provide name, userName and password which will be checked against the database of user credentials. The database of user credentials is saved as studentsAccs.csv, and includes all of the users' encrypted credentials.
+
+The code is explained below:
+
+1. Assign the inputted data to variables
+2. Open the database file to check if the username is already existed or not. If yes, empty all the input and set placed holder text, to show error message
+3. If not, check if the re_confirmed password is matched to password or not. If yes, do the same as if the usernam is existed.
+4. If the input mets all the criterion, rite the input to the database file to store information
+
+
+```.py
+#Assign the input to variables
+name = self.lineEdit.text()
+userName = self.lineEdit_3.text()
+passWord = self.lineEdit_2.text()
+rePassword = self.lineEdit_4.text()
+
+#Open the database file
+with open("StudentAccs/studentsAccs.csv", "r+") as StudentAccF:
+  accountL = []
+  file = csv.reader(StudentAccF, delimiter=",")  # Split the data by the ","
+  for row in file:
+      for acc in row:
+          accountL.append(acc)  # Append all the words in the list into the vocab array
+
+  #check if the usernam is already exist
+  if name in accountL or userName in accountL:
+      #Set the placeholder text to notify the user that the username is already exist
+      self.lineEdit.setPlaceholderText("Already exist")
+      self.lineEdit_3.setPlaceholderText("Already exist")
+      self.emptyLineEdit()
+  #check if the re_confirmed password is matched with the password
+  elif passWord != rePassword:
+      #Set the placeholder text to notify the user that the reconfirmed password is matched to password
+      self.lineEdit_4.setPlaceholderText("Wrong Confirmed Password")
+      self.emptyLineEdit()
+
+  elif passWord != rePassword and (name in accountL or userName in accountL):
+      self.lineEdit.setPlaceholderText("Already exist")
+      self.lineEdit_3.setPlaceholderText("Already exist")
+      self.lineEdit_4.setPlaceholderText("Wrong Confirmed Password")
+  #If all the criterion is fulfilled, write the inputted data into databaese file
+  else:
+      StudentAccF.write(name + ",")
+      StudentAccF.write(userName + ",")
+      StudentAccF.write(passWord + "\n")
+
+      #Close the window and
+      self.close()
+      self.successSignUp()
+```
 
 ## Secured Log In
 
