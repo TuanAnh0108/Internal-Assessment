@@ -4,7 +4,7 @@
 
 ## Sign Up for students
 
-To log a user in, the user must provide name, userName and password which will be checked against the database of user credentials. The database of user credentials is saved as studentsAccs.csv, and includes all of the users' encrypted credentials.
+To sign up, the user must provide name, userName and password which will be checked against the database of user credentials. The database of user credentials is saved as studentsAccs.csv, and includes all of the users' encrypted credentials.
 
 The code is explained below:
 
@@ -12,7 +12,6 @@ The code is explained below:
 2. Open the database file to check if the username is already existed or not. If yes, empty all the input and set placed holder text, to show error message
 3. If not, check if the re_confirmed password is matched to password or not. If yes, do the same as if the usernam is existed.
 4. If the input mets all the criterion, rite the input to the database file to store information
-
 
 ```.py
 #Assign the input to variables
@@ -89,27 +88,51 @@ The database of user credentials is saved as `passwords.txt`, and includes all o
 
 The code is explained below:
 
-1. The inputted usernam and password are stored
-2. The `passwords.txt` file is opened and a for-loop iterates through the encrypted credentials
-3. The `verify_password()` function is used to compare every stored password in the text file to the inputted `email + password`
-4. If they are equal, the window closes (thus the user gains access to the main window) and they are logged in. The user's book database is loaded
-5. If no credentials match, a pop-up is displayed showing an error message, and inputs are cleared
-
+1. Assign the inputted username and password
+2. Open the database file to check if the username exist in the file. If not, simply empty the input box
+3. If yes, take out the password that is matched to the username. 
+4. Check the password, if the password is not correct. Simply empty the input box
+5. If yes, close the window and enter the app
 
   ```.py
-  def enterApp(self):
-      username = self.lineEdit.text()
-      password = self.lineEdit_2.text()
-      
-      with open("passwords.txt", "r") as passwordFile:
-          for storedPassword in passwordFile:
-              if verify_password(storedPassword, email + password):
-                  self.close()
+def enterApp(self):
+  #Set the input to variables
+  username = self.lineEdit.text()
+  password = self.lineEdit_2.text()
+  # Open the database file
+  with open("StudentAccs/studentsAccs.csv", "r") as studentAccF:
+      studentAccL = []
+      students = []
+      file = csv.reader(studentAccF, delimiter=",")  # Split the data by the ","
+      for row in file:
+          students.append(row)
+          for detailed in row:
+              studentAccL.append(detailed)  
 
-          QMessageBox.about(self, "Error", "Error: Wrong password")
-          self.lineEdit.clear()
-          self.lineEdit_2.clear()
-  ```
+      # Check if the username is on the students account list
+      if username in studentAccL:
+          # Take out the index of the username in list
+          index = studentAccL.index(username)
+          Lindex = int(index / 3)
+          # Take out the password that match to username
+          studentsPassword = students[Lindex][2]
+
+          # Check the password
+          if password == studentsPassword:
+              print("Correct")
+              self.close()
+          else:
+              self.lineEdit.setText("")
+              self.lineEdit_2.setText("")
+              self.lineEdit.repaint()
+              self.lineEdit_2.repaint()
+      # If not, simply empty the input so that the user can input again
+      else:
+          self.lineEdit.setText("")
+          self.lineEdit_2.setText("")
+          self.lineEdit.repaint()
+          self.lineEdit_2.repaint()
+```
 ## Database
 
 In the Japanese Learning system, it will stores the vocabulary, its definition, and quiz. This has to be achieved through a database, such that the information can be kept between user sessions.While database solutions such as SQL and SQLite could be chosen, a more practical and lightweight solution will be suitable for such a small-scale project. Thus, a `.csv` file is used to store the data, which can be accessed through the `csv` library in python (`import csv`).
