@@ -1,7 +1,7 @@
 # Development
 
 ## List of Technique used in the program
-1. [Sign Up for students](#signup)
+1. [Sign Up for students](##SignUpforstudents)
 1. [Secured Log In](#login)
 1. [Database](#database)
 1. [Students App Flashcard](#database)
