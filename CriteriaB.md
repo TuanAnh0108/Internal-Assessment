@@ -60,7 +60,7 @@
   ## UML Diagram
   ![SystemDiagram](UML.png)
   
-   **Fig10.** Here is the OOP UML Diagram showing the classes inside the program. Also, classeses' functions, variables and how they are related to each other are shown in this diagram.
+   **Fig10.** Here is the OOP UML Diagram showing the classes inside the program. Also, classeses' functions, variables and how they are related to each other are shown in this diagram. The program is organized in 8 classes. As the program has 5 functions that fulfill the client's criteria, there are 5 classess containing functiosn and variables related to the functions. Also, there are 3 more windows that shows up the successful information, completed or results of the actions that they users have done. Thus, there are more 3 classess in repsonsible for showing the these windows. 
   
   ## Testing Plan
   
