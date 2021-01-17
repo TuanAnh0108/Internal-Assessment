@@ -1,6 +1,13 @@
 # Development
 
-### All the code can be found in the code folder 
+## List of Technique used in the program
+1. [Sign Up for students](#signup)
+1. [Secured Log In](#login)
+1. [Database](#database)
+1. [Students App Flashcard](#database)
+1. [Students App Quizz](#database)
+1. [History Windows](#historywindows)
+1. [Kanji Learning Windows](#kanjiLearningWindows)
 
 ## Sign Up for students
 
@@ -75,6 +82,8 @@ To encrypt the password string both libraries `os` and `hashlib` must be importe
 
 **Getting the username and password and check to confirm log in**
 
+#### Teacher App
+
 For the teacher app, there will be only one user uses it so that there is no need for store username and password in the database. Instead I will just store them
 inside the program.
 
@@ -83,8 +92,9 @@ inside the program.
     password = "sensei"
   ```
 
-To log a student user in, the user must provide an username and password, which will be checked in the database of user credential ludes all of the users' encrypted credentials.
-The database of user credentials is saved as `passwords.txt`, and includes all of the users' encrypted credentials.
+#### Student App
+
+To log a student user in, the user must provide an username and password, which will be checked in the database of user credential ludes all of the users' encrypted credentials. The database of user credentials is saved as `StdudentsAcc.csv`, and includes all of the users' encrypted credentials.
 
 The code is explained below:
 
@@ -182,7 +192,12 @@ a `.csv` file so that the table can load the data from it. Moreover, if the voca
 
 **Integrating Database**
 
-Then the table also need to represent the data in the .csv file. Below is the snippet code of how to load the data from the database file into the table:
+Then the table also need to represent the data in the .csv file. As the students will open the windows to see what new words, they have already had and edit them if need, so that the table need to show all the words that they add to the database file from the previous sections.
+In order to write the data into the table, I will 
+1. Open the database file.
+2. I will split the data by "," to read all of the vocab and and their definitions inside the file
+3. I will implement two for loops, one for loops to assign the index row and the text of each item in the database file, one for loop to take out the item and the index col of each item in a row.
+4. Then I will set item or write the data into the cell of the table through the "tableWidget.setItem(row, col, content)" function.
 
 ```.py
     def loadTable(self):
