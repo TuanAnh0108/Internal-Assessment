@@ -722,4 +722,40 @@ At the previous part, the program has already created 4 random words and store t
       flag = False
 ```
 
+## Students List in the Teacher App
+
+As the teachers will see all the record of quizzes of students that sign up and use the Students App. In order for teachers to do that, I will create push buttons that will lead to each student's history. So after the students sign up, all of their name are saved in the `StudentAcc.csv`, so that I will read the file lines by lines to take out the students' name and append them into a list. Then I will create buttons with the name from the list. And to store and organize all the buttons, I will create a empty Group Box to add the buttons inside it.
+
+Here are the steps:
+1. Create an empty Group Box
+2. Open and read the students's name file
+3. Append all the students name to a list
+4. Use for loops to create buttons
+5. Assign the text for the buttons through looping the students name list
+6. Add the buttons to the group box.
+
+```.py
+def loadStudentsList(self):
+    
+    # Create a Group Box to store buttons
+    self.vbox = QVBoxLayout()
+     
+    #Open the studentsAccs.csv file
+    with open("../Students App/StudentAccs/studentsAccs.csv") as studentL:
+        accountL = []
+        studentName = []
+        file = csv.reader(studentL, delimiter=",")  # Split the data by the ","
+        for row in file:
+            for acc in row:
+                accountL.append(acc)  # Append all the words in the list into the vocab array
+        # Append the name of students to a list
+        for i in range(0, len(accountL), 3):
+            studentName.append(accountL[i])
+        # Create buttons
+        for i in studentName:
+            self.btn = QPushButton('{}'.format(i), self)
+            self.vbox.addWidget(self.btn)
+            self.vbox.addStretch(1)
+            self.groupBox.setLayout(self.vbox)
+```
                
