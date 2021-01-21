@@ -24,15 +24,17 @@ and only need the Internet when uploading students' records to the GitHub server
 
 5. The vocabulary in the quiz is sorted by topic
 
-6. The vocabulary and its definition can be added by students
+6. The vocabulary and its definition can be added or deleted by students
 
 7. The student’s answers are hand-written and it can be displayed as image
 
-8.  The vocabulary in the list will be deleted if the students' answer is correct or the students know the word in the flashcard
+8. The vocabulary in the vocab list will be displayed into the flashcard window.
 
-9. There are two versions of the program: one for teach and one for students.
+9.  The vocabulary in the list will be deleted if the students know the words in the flashcard
 
-10. The programs have the log in system
+10. There are two versions of the program: one for teach and one for students.
+
+11. The programs have the log in system
 
 
 
