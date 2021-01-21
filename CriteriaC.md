@@ -266,11 +266,11 @@ The process of making flash card follows these steps:
    
   If it is empty,there is no need to load the file and display the vocabulary and its definition there. I will just display a windows to show the finish flash card windows.
     
-    ```.py
-    if (os.path.getsize("VocabList/VocabList.csv")) == 0: # If the file is empty
-          self.close().  # Close the flashcard windows itself
-          self.finish_flash(). # Open the finish flash card windows 
-    ```
+```.py
+if (os.path.getsize("VocabList/VocabList.csv")) == 0: # If the file is empty
+      self.close().  # Close the flashcard windows itself
+      self.finish_flash(). # Open the finish flash card windows 
+```
   If it is not, open the vocabulary list file to load the data. I will add all the word into an array so I can get a random word inside the array by creating random index.
   
 ```.py
