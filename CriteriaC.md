@@ -733,6 +733,37 @@ def loadKanji(self):
 
             flag = False
 ```
+```.py
+    def checkAnswer(self):
+        if self.checkBox.isChecked():
+            if self.checkBox.text() == self.correctAns:
+                self.label_3.setText("Correct")
+            else:
+                self.label_3.setText("Wrong")
+                self.label_3.repaint()
+            self.checkBox.setChecked(False)
+        elif self.checkBox_2.isChecked():
+            if self.checkBox_2.text() == self.correctAns:
+                self.label_3.setText("Correct")
+            else:
+                self.label_3.setText("Wrong")
+                self.label_3.repaint()
+            self.checkBox_2.setChecked(False)
+        elif self.checkBox_3.isChecked():
+            if self.checkBox_3.text() == self.correctAns:
+                self.label_3.setText("Correct")
+            else:
+                self.label_3.setText("Wrong")
+                self.label_3.repaint()
+            self.checkBox_3.setChecked(False)
+        else:
+            if self.checkBox_4.text() == self.correctAns:
+                self.label_3.setText("Correct")
+            else:
+                self.label_3.setText("Wrong")
+                self.label_3.repaint()
+            self.checkBox_4.setChecked(False)
+```
 
 ## Students List in the Teacher App
 
