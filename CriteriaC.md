@@ -684,42 +684,54 @@ randomKanji = random.sample(kanjiArray, 4)
 The program will run every time the user press the next button and after generating the kanji, it will stop. In this part I use `while` loop to implement the function as the number of times that the user presses the `next` button is unknown so using `for loop` in this case is not appropriate. By assign `True` or `False` to the variable `flag`, the program can continue or stop through `while flag`. 
 At the previous part, the program has already created 4 random words and store them to the `kanjiArray`. Thus, in this part, the program just need to set text, which is elements from the array to the radio buttons. Because the radio buttons cannot change their orders or randomly taken, taking random text from the list and assign to the radio buttons is a solution for this. The method is: generate 4 non-duplicated random numbers in range(0,3) as the length of the `kanjiArray` is 4 then append them all into `randomIndexList` array. Now the last step is setting text from the random kanji array. Below is the snippet of code with comment.  
 ```.py
-  flag = True
-  while flag:  # The program will run until the user exit.
-      l = 0
-      # Array with random indexes
-      randomIndexList = []
+def loadKanji(self):
 
-      while len(randomIndexList) < 4:
-          index = random.randint(0, 3)
+    with open("VocabList/Kanji.csv") as kanji_file:
+        file = csv.reader(kanji_file, delimiter=",")
+        kanjiArray = []
+        flag = True
 
-          if index not in randomIndexList:
-              randomIndexList.append(index)
+        for word in file:
+            kanjiArray.append(word)
 
-      # Set the text for the label t
-      self.label_2.setText(randomKanji[randomIndexList[index]][0])
+        while flag:  # The program will run until the user exit.
 
-      # Assign the correct answers for the variable to check it later
-      # using global for the purpose of using it in another function
-      global correctAns
-      correctAns = randomKanji[randomIndexList[index]][1]
-      self.label_2.repaint()
+            l = 0
+            randomKanji = random.sample(kanjiArray, 4)
 
-      # Assign random text for each button
-      self.radioButton.setText(randomKanji[randomIndexList[l]][1])
-      self.radioButton.repaint()
-      l += 1
-      self.radioButton_2.setText(randomKanji[randomIndexList[l]][1])
-      self.radioButton_2.repaint()
-      l += 1
-      self.radioButton_3.setText(randomKanji[randomIndexList[l]][1])
-      self.radioButton_3.repaint()
-      l += 1
-      self.radioButton_4.setText(randomKanji[randomIndexList[l]][1])
-      self.radioButton_4.repaint()
-      
-      # Stop generating random words
-      flag = False
+            # Array with random indexes
+            randomIndexList = []
+
+            while len(randomIndexList) < 4:
+                index = random.randint(0, 3)
+
+                if index not in randomIndexList:
+                    randomIndexList.append(index)
+
+            # Set the text for the label t
+            self.label_2.setText(randomKanji[randomIndexList[index]][0])
+
+            # Assign the correct answers for the variable to check it later
+            # using global for the purpose of using it in another function
+            self.correctAns = randomKanji[randomIndexList[index]][1]
+            self.label_2.repaint()
+
+            self.checkAnswer()
+
+            # Assign random text for each button
+            self.checkBox.setText(randomKanji[randomIndexList[l]][1])
+            self.checkBox.repaint()
+            l += 1
+            self.checkBox_2.setText(randomKanji[randomIndexList[l]][1])
+            self.checkBox_2.repaint()
+            l += 1
+            self.checkBox_3.setText(randomKanji[randomIndexList[l]][1])
+            self.checkBox_3.repaint()
+            l += 1
+            self.checkBox_4.setText(randomKanji[randomIndexList[l]][1])
+            self.checkBox_4.repaint()
+
+            flag = False
 ```
 
 ## Students List in the Teacher App
